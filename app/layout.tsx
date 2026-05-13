@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { cn } from "@/lib/utils";
 
+import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import Sidebar from "@/components/layout/Sidebar";
 
@@ -36,16 +37,18 @@ export default function RootLayout({
       <body className="min-h-screen bg-muted/40">
         <Navbar />
 
-        <div className="flex">
-          
+        <div className="flex min-h-[calc(100vh-65px)]">
           <div className="hidden md:block">
             <Sidebar />
           </div>
 
-          <main className="flex-1 p-4 sm:p-6">
-            {children}
-          </main>
+          <div className="flex flex-1 flex-col">
+            <main className="flex-1 p-4 sm:p-6">
+              {children}
+            </main>
 
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
